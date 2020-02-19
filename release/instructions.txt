@@ -1,0 +1,13 @@
+Windows and Linux
+
+To run the game, simply open the folder specific to your Operational system and Run the File named "whatdo'w''e'donow"
+
+
+OSX
+
+Go to the folder directory:
+
+Whatdo-W-E-donow\osx64\whatdo'w''e'donow.app\Contents\Resources for OSX 64 bits
+Whatdo-W-E-donow\osx32\whatdo'w''e'donow.app\Contents\Resources for OSX 32 bits
+
+and open the file named app.inc

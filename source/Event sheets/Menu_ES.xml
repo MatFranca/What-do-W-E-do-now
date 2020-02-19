@@ -1,0 +1,419 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Menu_ES</name>
+    <events>
+        <variable constant="0" name="ScreenTransition" sid="2670620586914597" static="0" type="number">0</variable>
+        <variable constant="0" name="Volume" sid="9579445438974985" static="0" type="number">1</variable>
+        <variable constant="0" name="FadeInOut" sid="9616546630457649" static="0" type="number">0</variable>
+        <event-block sid="5976468721579485">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="5813324235349175" type="System" />
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="6470797924976884" type="Start_TextIMG">
+                    <param id="0" name="Opacity">100</param>
+                </action>
+                <action id="-15" name="Set visible" sid="7732468375220397" type="Start_TextIMG">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="2075636687847854" type="Exit_TextIMG">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-13" name="Set time scale" sid="7861982802715165" type="System">
+                    <param id="0" name="Time scale">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="4000483845787542" type="System">
+                    <param id="0" name="Variable">Loops</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="907189904897709" type="System">
+                    <param id="0" name="Variable">LevelComplete</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="4353979537517287" type="System">
+                    <param id="0" name="Variable">ScreenTransition</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="9858088732000453" type="blackBKG">
+                    <param id="0" name="Opacity">0</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="5490954227382475">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="973219745054642" type="Portais">
+                            <param id="0" name="Instance variable">FlippedP</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="8" name="Set flipped" sid="4828627928149645" type="Portais">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5698231717811724">
+                    <conditions>
+                        <condition id="4" inverted="1" name="Is any playing" sid="6897020673436145" type="Audio" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="8111093376545383" type="Audio">
+                            <param id="0" name="Audio file">Tema Menu</param>
+                            <param id="2" name="Loop">1</param>
+                            <param id="3" name="Volume">-5</param>
+                            <param id="1" name="Tag (optional)">&quot;Menu&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="9043204662313681">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="9492626089416559" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="6955229144627813">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="1358092624470255" type="System">
+                            <param id="0" name="Variable">FadeInOut</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Set opacity" sid="3001126818739142" type="Start_TextIMG">
+                            <param id="0" name="Opacity">Start_TextIMG.Opacity-1.1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1911942856084996">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="337792514781697" type="System" />
+                        <condition id="-14" name="Compare variable" sid="8496239189027657" type="System">
+                            <param id="0" name="Variable">FadeInOut</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Set opacity" sid="6917877575518854" type="Start_TextIMG">
+                            <param id="0" name="Opacity">Start_TextIMG.Opacity+1.1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5913354980853741">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="7895093521744418" type="System">
+                            <param id="0" name="Variable">Volume</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="32" name="Add mute effect" sid="1794430336876305" type="Audio">
+                            <param id="0" name="Tag">&quot;Menu&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2461327648503927">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="4761420844874388" type="System" />
+                        <condition id="-14" name="Compare variable" sid="5590499035604972" type="System">
+                            <param id="0" name="Variable">Volume</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="12" name="Remove all effects" sid="3403925247771487" type="Audio">
+                            <param id="0" name="Tag">&quot;Menu&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="5496092626457594">
+            <conditions>
+                <condition id="-10" name="Compare opacity" sid="9777887087690994" type="Start_TextIMG">
+                    <param id="0" name="Comparison">3</param>
+                    <param id="1" name="Opacity">35</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="2065073803094696" type="System">
+                    <param id="0" name="Variable">FadeInOut</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4533274725198269">
+            <conditions>
+                <condition id="-10" name="Compare opacity" sid="580811765800168" type="Start_TextIMG">
+                    <param id="0" name="Comparison">5</param>
+                    <param id="1" name="Opacity">100</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="2295537614730394" type="System">
+                    <param id="0" name="Variable">FadeInOut</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3229029069582915">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="4352464159823147" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">Sair</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="9760119066684642" type="Start_TextIMG">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="6654543454868404" type="Exit_TextIMG">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="5840511162557413">
+                    <conditions>
+                        <condition id="-14" inverted="1" name="Compare variable" sid="655326903327042" type="System">
+                            <param id="0" name="Variable">Volume</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="3347237737313309" type="Audio">
+                            <param id="0" name="Audio file">Mouse Click</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-3</param>
+                            <param id="1" name="Tag (optional)">&quot;Click&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="4393796118362012">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="7206629989961757" type="Keyboard">
+                    <param id="0" name="Key">87 (W)</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="3096023345413845">
+                    <conditions>
+                        <condition id="-9" name="Is visible" sid="160206891451916" type="Start_TextIMG" />
+                        <condition id="-9" inverted="1" name="Is visible" sid="6534469171694134" type="Exit_TextIMG" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="6547792274236035" type="System">
+                            <param id="0" name="Variable">ScreenTransition</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="649245790568106">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="5756230841180209" type="System" />
+                        <condition id="-9" inverted="1" name="Is visible" sid="6122767230662793" type="Start_TextIMG" />
+                        <condition id="-9" name="Is visible" sid="7740533446684463" type="Exit_TextIMG" />
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Close" sid="6380903887478248" type="Browser" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="966135254406388">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="6532470187637788" type="Keyboard">
+                    <param id="0" name="Key">69 (E)</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="4287249036181267">
+                    <conditions>
+                        <condition id="-9" name="Is visible" sid="2380535888874539" type="Start_TextIMG" />
+                        <condition id="-9" inverted="1" name="Is visible" sid="9360084800923661" type="Exit_TextIMG" />
+                    </conditions>
+                    <actions>
+                        <action id="-25" name="Go to layout (by name)" sid="6501300855452492" type="System">
+                            <param id="0" name="Layout">&quot;Credits&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2684513473159476">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="8457089632741778" type="System" />
+                        <condition id="-9" inverted="1" name="Is visible" sid="2316782324092022" type="Start_TextIMG" />
+                        <condition id="-9" name="Is visible" sid="9432913397876514" type="Exit_TextIMG" />
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="5486099575037949" type="Start_TextIMG">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="2616075475787224" type="Exit_TextIMG">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="1043201637071367">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="2343990095712937" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">Volume</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="4462383173583652">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="4475801314646286" type="System">
+                            <param id="0" name="Variable">Volume</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="8898166243152445" type="System">
+                            <param id="0" name="Variable">Volume</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Play" sid="3909638227253401" type="Audio">
+                            <param id="0" name="Audio file">Mouse Click</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-3</param>
+                            <param id="1" name="Tag (optional)">&quot;Click&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="788157458830173">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="8678095797786813" type="System" />
+                        <condition id="-14" name="Compare variable" sid="9754730479625432" type="System">
+                            <param id="0" name="Variable">Volume</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="6140958132742094" type="System">
+                            <param id="0" name="Variable">Volume</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="4239849382865208">
+            <conditions>
+                <condition id="-21" name="Is between values" sid="8838406769675048" type="System">
+                    <param id="0" name="Value">Player.X</param>
+                    <param id="1" name="Lower bound">Portal2.X-4</param>
+                    <param id="2" name="Upper bound">Portal2.X+4</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="9074852347419989" type="Player">
+                    <param id="0" name="X">Portal.X</param>
+                    <param id="1" name="Y">Player.Y</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4066055946150768">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="825042245746875" type="System">
+                    <param id="0" name="Variable">ScreenTransition</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="2560820573984626">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="3542037135928724" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Set opacity" sid="2450983014604073" type="blackBKG">
+                            <param id="0" name="Opacity">blackBKG.Opacity+1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="7486997458388136">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="831044735253912" type="System">
+                                    <param id="0" name="Interval (seconds)">0.5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="3" name="Set volume" sid="5151816864233739" type="Audio">
+                                    <param id="0" name="Tag">&quot;Menu&quot;</param>
+                                    <param id="1" name="dB">Audio.Volume(&quot;Menu&quot;)-3</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="5788535225107075">
+            <conditions>
+                <condition id="-10" name="Compare opacity" sid="2524980132145558" type="blackBKG">
+                    <param id="0" name="Comparison">5</param>
+                    <param id="1" name="Opacity">100</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="9963650305937491" type="System">
+                    <param id="0" name="Variable">ScreenTransition</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="6" name="Stop" sid="1093985443212121" type="Audio">
+                    <param id="0" name="Tag">&quot;Menu&quot;</param>
+                </action>
+                <action id="-25" name="Go to layout (by name)" sid="1783846908866583" type="System">
+                    <param id="0" name="Layout">&quot;Level1&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8453003620072226">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="7306123584517821" type="System">
+                    <param id="0" name="Variable">Volume</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="5683109549948423" type="Volume">
+                    <param id="0" name="Frame number">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5829648857733218">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="2080117506276572" type="System">
+                    <param id="0" name="Variable">Volume</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="8963943683480899" type="Volume">
+                    <param id="0" name="Frame number">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

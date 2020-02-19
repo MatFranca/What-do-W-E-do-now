@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Credits_ES</name>
+    <events>
+        <event-block sid="4477891202505073">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="1559268367453156" type="System" />
+            </conditions>
+            <actions>
+                <action id="-13" name="Set time scale" sid="3546268963670267" type="System">
+                    <param id="0" name="Time scale">1</param>
+                </action>
+                <action id="3" name="Set volume" sid="117608441083165" type="Audio">
+                    <param id="0" name="Tag">&quot;Menu&quot;</param>
+                    <param id="1" name="dB">-8</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2721372016462284">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="8715410080758105" type="System">
+                    <param id="0" name="Interval (seconds)">0.01</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Set Y" sid="8698462738059305" type="Credit_Text">
+                    <param id="0" name="Y">Credit_Text.Y-1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3362896892564168">
+            <conditions>
+                <condition id="1" name="On any key pressed" sid="9242187571386164" type="Keyboard" />
+            </conditions>
+            <actions>
+                <action id="-25" name="Go to layout (by name)" sid="4608568454806566" type="System">
+                    <param id="0" name="Layout">&quot;Menu&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5238409109007221">
+            <conditions>
+                <condition id="-33" name="Pick by comparison" sid="3693614939327711" type="System">
+                    <param id="0" name="Object">Credit_Text</param>
+                    <param id="1" name="Expression">Credit_Text.Y</param>
+                    <param id="2" name="Comparison">4</param>
+                    <param id="3" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions />
+        </event-block>
+        <event-block sid="2626406396076743">
+            <conditions>
+                <condition id="-22" name="Else" sid="2876664980181845" type="System" />
+            </conditions>
+            <actions>
+                <action id="-25" name="Go to layout (by name)" sid="5878815134957464" type="System">
+                    <param id="0" name="Layout">&quot;Menu&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
